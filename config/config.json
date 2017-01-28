@@ -1,5 +1,5 @@
 {
 	"env":"base",
-	"basepath":"/apps/node-starter/",
+	"basepath":"/apps/apiManager",
 	"version":"0.0.0"
 }

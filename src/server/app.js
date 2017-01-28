@@ -11,7 +11,7 @@ qsystem.setBasePath(path.normalize(path.join(__dirname, '../../config')));
 qsystem.loadConfig('config.json');
 var config = qsystem.getConfig();
 
-app.use(config.basepath, express.static(path.join(__dirname, '../public')));
+app.use(config.basepath + '/admin', express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -24,6 +24,6 @@ app.use(morgan('combined', {stream: accessLogStream}));
 
 // Load in your routes
 var registerRoutes = require('./registerRoutes');
-app.use(registerRoutes);
+app.use(config.basepath, registerRoutes);
 
 module.exports = app;
