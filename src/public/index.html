@@ -1,8 +1,38 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-	<body>
-		<h1>Welcome to the node starter!</h1>
-	</body>
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/angular-block-ui.min.css">
+    <link rel="stylesheet" href="css/angular-toastr.min.css">
+    <title>Nationwide Admin Dashboard</title>
+  </head>
+  <body>
+    <div ui-view="header"></div> 
+    <div ui-view="content"></div> 
+    <!-- vendor -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-block-ui.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    <script src="js/angular-toastr.tpls.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/ui-bootstrap-custom-tpls-2.0.1.min.js"></script>
+    <!-- app -->
+    <script src="js/app/app.js"></script>
+    <script src="js/app/modules/dashboard/dashboard.controller.js"></script>
+    <script src="js/app/modules/header/header.controller.js"></script>
+    <script src="js/app/modules/login/login.controller.js"></script>
+    <script src="js/app/services/auth.service.js"></script>
+    <script src="js/app/services/job.factory.js"></script>
+    <script src="js/app/services/session.service.js"></script>
+  </body>
 </html>

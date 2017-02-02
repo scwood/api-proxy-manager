@@ -24,6 +24,7 @@
   "scripts": {
     "test": "istanbul cover _mocha -- --colors --recursive test",
     "start-dev": "pm2-docker pm2-dev.json --json",
+    "dev": "nodemon src/server/bin/run.js",
     "start-prod": "pm2-docker pm2-prod.json --json",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lint-fix": "./node_modules/.bin/eslint ./src/ --fix"
@@ -37,6 +38,8 @@
     "cookie-parser": "~1.4.1",
     "express": "~4.13.4",
     "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "qsystem": "~0.2.7"
   },
   "devDependencies": {
@@ -45,6 +48,7 @@
     "eslint-config-google": "^0.7.1",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
+    "nodemon": "^1.11.0",
     "sinon": "~1.17.3",
     "supertest": "^1.2.0",
     "supertest-session": "^2.0.1"

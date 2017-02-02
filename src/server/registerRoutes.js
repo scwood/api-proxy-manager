@@ -1,13 +1,15 @@
 var express = require('express');
+var passport = require('passport');
 var router = new express.Router();
 
-router.route('/:brandId/:serviceId')
+router.get('/:brandId/:serviceId', notImplemented);
+
+var adminRouter = new express.Router();
+
+router.route('/admin/services')
 	.get(notImplemented);
 
-router.route('/api/admin/services')
-	.get(notImplemented);
-
-router.route('/api/admin/services/:id')
+router.route('/admin/services/:id')
 	.post(notImplemented)
 	.patch(notImplemented)
 	.delete(notImplemented);
