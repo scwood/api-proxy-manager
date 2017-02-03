@@ -26,7 +26,7 @@
     "start-dev": "pm2-docker pm2-dev.json --json",
     "dev": "nodemon src/server/bin/run.js",
     "start-prod": "pm2-docker pm2-prod.json --json",
-    "lint": "./node_modules/.bin/eslint ./src/",
+    "lint": "./node_modules/.bin/eslint --ignore ./src/public/js ./src/",
     "lint-fix": "./node_modules/.bin/eslint ./src/ --fix"
   },
   "engines": {
@@ -37,9 +37,10 @@
     "bunyan": "^1.8.5",
     "cookie-parser": "~1.4.1",
     "express": "~4.13.4",
+    "jsonwebtoken": "^7.2.1",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
+    "passport-local": "https://registry.npmjs.org/passport-local/-/passport-local-1.0.0.tgz",
     "qsystem": "~0.2.7"
   },
   "devDependencies": {

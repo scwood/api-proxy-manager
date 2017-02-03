@@ -1,0 +1,20 @@
+<div class="container full-height">
+	<form class="login-form" ng-submit="login.login()">
+		<h2>Dashboard login</h2>
+		<hr>
+		<div class="alert alert-danger" role="alert" ng-show="login.error">
+			{{ login.error }}
+		</div>
+		<div class="form-group">
+			<label>Qualtrics username</label>
+			<input type="text" class="form-control" required ng-model="login.username">
+		</div>
+		<div class="form-group">
+			<label>Qualtrics password</label>
+			<input type="password" class="form-control" required ng-model="login.password">
+		</div>
+		<button class="btn btn-success btn-block">
+			Sign in
+		</button>
+	</form>
+</div>
