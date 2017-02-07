@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken');
 var qsystem = require('qsystem');
 var config = qsystem.getConfig();
 
-module.exports.postToken = function postToken(req, res, next) {
+module.exports.createToken = function createToken(req, res, next) {
 	var username = req.body.username;
 	var password = req.body.password;
 	if (username !== 'admin' || password !== 'admin') {
