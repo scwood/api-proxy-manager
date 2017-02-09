@@ -5,9 +5,9 @@
 		.module('app')
 		.service('Auth', Auth);
 
-	Auth.$inject = ['$http', '$q', 'Session', 'BASE_PATH'];
+	Auth.$inject = ['$http', '$q', 'Session', 'API_PATH'];
 
-	function Auth($http, $q, Session, BASE_PATH) {
+	function Auth($http, $q, Session, API_PATH) {
 		var service = {
 			isAuthenticated: isAuthenticated,
 			getUsername: getUsername,
@@ -49,7 +49,7 @@
 
 		function logout() {
 			Session.destroy();
-			return $http.post(BASE_PATH + '/users/logout');
+			return $http.post(API_PATH + '/users/logout');
 		}
 
 		function refreshAuthFromServer() {

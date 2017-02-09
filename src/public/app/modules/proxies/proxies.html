@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<i class="fa fa-fw fa-database"></i> Proxies
+			</h3>
+		</div>
+		<div class="panel-body" ng-class="{ 'content-panel': proxies.proxies.length }">
+			<div ng-show="proxies.proxies.length === 0 && !proxies.isLoading">
+				No proxies are currently set up.
+			</div>
+			<div class="row">
+				<div class="col-md-6" ng-repeat="proxy in proxies.proxies">
+					<div
+						class="panel panel-default"
+						ng-class="$index % 2 === 0 ? 'left-column' : 'right-column'">
+						<div class="panel-body truncate-text">
+							<div class="pull-right">
+								<button class="btn btn-xs btn-default" ui-sref="app.proxy({ id: proxy._id })">
+									Edit
+								</button>
+								<button class="btn btn-xs btn-danger" ng-click="proxies.deleteProxy(proxy._id)">
+									Delete
+								</button>
+							</div>
+							<p>
+								Brand: <strong>{{proxy.brandName}}</strong><br>
+								Name: <strong>{{proxy.proxyName}}</strong>
+							</p>
+							<small>{{ proxies.generateClientUrl(proxy) }}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

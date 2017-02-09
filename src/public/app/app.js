@@ -3,7 +3,7 @@
 
 	angular
 		.module('app', ['ui.bootstrap', 'ui.router', 'blockUI', 'toastr', 'ngAnimate', 'ngResource'])
-		.constant('BASE_PATH', '/NationwideV2')
+		.constant('API_PATH', '/apps/apiManager/admin/api')
 		.config(config);
 
 	config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
@@ -16,41 +16,61 @@
 					'header': {
 						templateUrl: 'app/modules/header/header.html',
 						controller: 'HeaderController',
-						controllerAs: 'header',
+						controllerAs: 'header'
 					}
 				}
 			})
 			.state('app.login', {
-				url: '/',
+				url: '/login',
 				views: {
 					'content@': {
 						templateUrl: 'app/modules/login/login.html',
 						controller: 'LoginController',
-						controllerAs: 'login',
+						controllerAs: 'login'
 					}
 				}
 			})
-			.state('app.dashboard', {
-				url: '/dashboard',
+			.state('app.proxies', {
+				url: '/proxies',
 				views: {
 					'content@': {
-						templateUrl: 'app/modules/dashboard/dashboard.html',
-						controller: 'DashboardController',
-						controllerAs: 'dashboard',
+						templateUrl: 'app/modules/proxies/proxies.html',
+						controller: 'ProxiesController',
+						controllerAs: 'proxies'
+					}
+				}
+			})
+			.state('app.proxy', {
+				url: '/proxies/:id',
+				views: {
+					'content@': {
+						templateUrl: 'app/modules/proxy/proxy.html',
+						controller: 'ProxyController',
+						controllerAs: 'proxy'
+					}
+				}
+			})
+			.state('app.newProxy', {
+				url: '/proxies/new',
+				views: {
+					'content@': {
+						templateUrl: 'app/modules/proxy/proxy.html',
+						controller: 'ProxyController',
+						controllerAs: 'proxy'
 					}
 				}
 			});
 
 		$urlRouterProvider.otherwise(function ($injector, $location) {
 			var $state = $injector.get('$state');
-			$state.go('app.dashboard');
+			$state.go('app.login');
 		});
 
 		$httpProvider.interceptors.push(function ($q) {
 			return {
 				responseError: function (rejection) {
 					if (rejection.status === 401) {
-						location.reload();
+						//location.reload();
 					}
 					return $q.reject(rejection);
 				}

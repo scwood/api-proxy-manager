@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<h3 class="panel-title">
+					<i class="fa fa-fw fa-pencil"></i>
+					Edit Proxy
+				</h3>
+			</div>
+		</div>
+		<div class="panel-body">
+			<form>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Brand Name</label>
+							<input class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Proxy Name</label>
+							<input class="form-control">
+						</div>
+						<div class="form-group">
+							<label>
+								Auth Token
+								<button class="btn btn-xs btn-default">Generate</button>
+							</label>
+							<input class="form-control">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>URL</label>
+							<input class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Query Paramaters</label>
+							<button class="btn btn-xs btn-default">Add</button>
+							<div
+									class="input-group query-param"
+									ng-repeat="queryParam in proxy.proxy.queryParameters">
+								<input type="text" class="form-control" placeholder="Key"/>
+								<span class="input-group-btn" style="width:0px;"></span>
+								<input type="text" class="form-control" placeholder="Default value"/>
+								<span class="input-group-addon">
+									<i class="fa fa-user-plus" title="User overrideable?"></i>
+									<input type="checkbox">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn btn-success">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

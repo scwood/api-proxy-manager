@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-var serviceSchema = new mongoose.Schema({
-	brandId: {
+var proxySchema = new mongoose.Schema({
+	brandName: {
 		type: String,
 		required: true
 	},
-	serviceId: {
+	proxyName: {
 		type: String,
 		required: true
 	},
@@ -36,5 +36,5 @@ var serviceSchema = new mongoose.Schema({
 	]
 });
 
-var Service = mongoose.model('Service', serviceSchema);
-module.exports = Service;
+var Proxy = mongoose.model('Proxy', proxySchema);
+module.exports = Proxy;
