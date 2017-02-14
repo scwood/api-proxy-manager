@@ -14,31 +14,33 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Brand Name</label>
-							<input class="form-control">
+							<input class="form-control" ng-model="proxyController.proxy.brandName">
 						</div>
 						<div class="form-group">
 							<label>Proxy Name</label>
-							<input class="form-control">
+							<input class="form-control" ng-model="proxyController.proxy.proxyName">
 						</div>
 						<div class="form-group">
 							<label>
 								Auth Token
 								<button class="btn btn-xs btn-default">Generate</button>
 							</label>
-							<input class="form-control">
+							<input class="form-control" ng-model="proxyController.proxy.authToken">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>URL</label>
-							<input class="form-control">
+							<input class="form-control" ng-model="proxyController.proxy.url">
 						</div>
 						<div class="form-group">
-							<label>Query Paramaters</label>
-							<button class="btn btn-xs btn-default" ng-click="proxy.addQueryParam()">Add</button>
+							<label style="margin-bottom: 6px">Query Paramaters</label>
+							<button class="btn btn-xs btn-default" ng-click="proxyController.addQueryParam()">
+								Add
+							</button>
 							<div
 								class="input-group query-param"
-								ng-repeat="queryParam in proxy.proxy.queryParameters track by $index">
+								ng-repeat="queryParam in proxyController.proxy.queryParameters track by $index">
 								<input
 									type="text"
 									class="form-control input-sm no-border-right"
@@ -57,7 +59,7 @@
 								<span class="input-group-btn">
 									<button
 										class="btn btn-danger btn-sm"
-										ng-click="proxy.deleteQueryParam($index)">
+										ng-click="proxyController.deleteQueryParam($index)">
 										<i class="fa fa-trash"></i>
 									</button>
 								</span>

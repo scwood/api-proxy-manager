@@ -9,7 +9,7 @@ var proxySchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	token: {
+	authToken: {
 		type: String,
 		required: true
 	},

@@ -12,7 +12,7 @@ router.route('/:brandId/:proxyId')
 router.route('/admin/api/proxies')
 	.get(proxyController.getProxies)
 	.post(checkForBody([
-		'brandName', 'proxyName', 'token', 'url', 'queryParameters'
+		'brandName', 'proxyName', 'authToken', 'url', 'queryParameters'
 	]), proxyController.createProxy);
 
 router.route('/admin/api/proxies/:id')
