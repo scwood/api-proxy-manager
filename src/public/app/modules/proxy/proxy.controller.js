@@ -10,12 +10,26 @@
 	function ProxyController(toastr, Proxy) {
 		var vm = this;
 
-		vm.proxy = { queryParameters: [1,2,3] };
+		vm.proxy = { queryParameters: [] };
 
 		vm.refreshProxies = refreshProxies;
+		vm.addQueryParam = addQueryParam;
+		vm.deleteQueryParam = deleteQueryParam;
 
 		function refreshProxies() {
 
+		}
+
+		function addQueryParam() {
+			vm.proxy.queryParameters.push({
+				key: '',
+				value: '',
+				canOverride: false
+			});
+		}
+
+		function deleteQueryParam(index) {
+			vm.proxy.queryParameters.splice(index, 1);
 		}
 	}
 })();

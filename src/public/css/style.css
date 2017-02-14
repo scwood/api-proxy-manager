@@ -32,5 +32,9 @@
 }
 
 .query-param {
-  margin-bottom: 7px;
+  margin-bottom: 10px;
+}
+
+.no-border-right {
+  border-right: 0px;
 }

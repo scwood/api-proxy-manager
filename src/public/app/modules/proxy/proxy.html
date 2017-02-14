@@ -35,16 +35,31 @@
 						</div>
 						<div class="form-group">
 							<label>Query Paramaters</label>
-							<button class="btn btn-xs btn-default">Add</button>
+							<button class="btn btn-xs btn-default" ng-click="proxy.addQueryParam()">Add</button>
 							<div
-									class="input-group query-param"
-									ng-repeat="queryParam in proxy.proxy.queryParameters">
-								<input type="text" class="form-control" placeholder="Key"/>
+								class="input-group query-param"
+								ng-repeat="queryParam in proxy.proxy.queryParameters track by $index">
+								<input
+									type="text"
+									class="form-control input-sm no-border-right"
+									placeholder="Key"
+									ng-model="queryParam.key">
 								<span class="input-group-btn" style="width:0px;"></span>
-								<input type="text" class="form-control" placeholder="Default value"/>
+								<input
+									type="text"
+									class="form-control input-sm no-border-right"
+									placeholder="Default value"
+									ng-model="queryParam.value">
 								<span class="input-group-addon">
-									<i class="fa fa-user-plus" title="User overrideable?"></i>
-									<input type="checkbox">
+									<span class="small">Can override?</span>
+									<input type="checkbox" ng-model="queryParam.canOverride">
+								</span>
+								<span class="input-group-btn">
+									<button
+										class="btn btn-danger btn-sm"
+										ng-click="proxy.deleteQueryParam($index)">
+										<i class="fa fa-trash"></i>
+									</button>
 								</span>
 							</div>
 						</div>
